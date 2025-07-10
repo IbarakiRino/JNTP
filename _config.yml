@@ -30,6 +30,12 @@ github_username:  IbarakiRino
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji
+
+compress_html:
+  blanklines:       true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
