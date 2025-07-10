@@ -1,4 +1,3 @@
-```
 ---
 layout: page
 title: Tag
@@ -20,4 +19,3 @@ site.tags[1]: array of posts in this tag
     {% endfor %}
   </ul>
 {% endfor %}
-```
