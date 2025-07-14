@@ -7,20 +7,56 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2575.6">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">---</p>
-<p class="p1">layout: default</p>
-<p class="p1">---</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- 仅保留页面内容 --&gt;</p>
-<p class="p1">&lt;main class="page-content" aria-label="Content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrapper"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{{ content }}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/main&gt;</p>
+<p class="p1"><span class="s1">---</span></p>
+<p class="p1"><span class="s1">layout: base</span></p>
+<p class="p1"><span class="s1">---</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="home"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{%- if page.title -%}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1 class="page-heading"&gt;{{ page.title }}&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{%- endif -%}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{{ content }}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% if site.paginate %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% assign posts = paginator.posts %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% else %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% assign posts = site.posts %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endif %}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if site.paginate %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="pager"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="pagination"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- if paginator.previous_page %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" title="Go to Page {{ paginator.previous_page }}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ paginator.previous_page }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- else %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;div class="pager-edge"&gt;•&lt;/div&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;div class="current-page"&gt;{{ paginator.page }}&lt;/div&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- if paginator.next_page %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="{{ paginator.next_page_path | relative_url }}" class="next-page" title="Go to Page {{ paginator.next_page }}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ paginator.next_page }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- else %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;div class="pager-edge"&gt;•&lt;/div&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{%- endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{%- endif -%}</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
 </body>
 </html>
