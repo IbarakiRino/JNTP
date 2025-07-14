@@ -50,7 +50,10 @@ layout: home
   pointer-events: none;
   color: #333;
 }
-.post-list { display: none; }
+.post-list-heading,
+.post-list {
+ display: none; 
+}
 </style>
 
 <!-- 🧠 预览交互逻辑 -->
