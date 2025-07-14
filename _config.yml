@@ -19,6 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: JNTP
+author:
+  name: Supernice Translator Team
 description: >- # this means to ignore newlines until "baseurl:"
   Japanese novel translation practice repository.
 baseurl: "" # the subpath of your site, e.g. /blog
