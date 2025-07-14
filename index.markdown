@@ -2,7 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: novel_home
+layout: home
 ---
 
 <!-- 🔒 隐藏预览内容：每个标签取 chapter_number == 0 的那篇文章 -->
@@ -50,6 +50,7 @@ layout: novel_home
   pointer-events: none;
   color: #333;
 }
+.post-list { display: none; }
 </style>
 
 <!-- 🧠 预览交互逻辑 -->
