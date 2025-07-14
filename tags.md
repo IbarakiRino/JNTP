@@ -14,11 +14,12 @@ site.tags[1]: array of posts in this tag
 {% for tag in ordered_tags %}
   <h3>{{ tag[0] }}</h3>
   <ul>
-    {% assign posts = tag[1] | sort: 'chapter_number' %}
-    {% for post in posts %}
+    {% assign posts_sorted = tag[1] | sort: 'chapter_number' | reverse %}
+    {% for post in posts_sorted %}
       <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
 {% endfor %}
+
