@@ -31,32 +31,6 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% assign posts = site.posts %}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endif %}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if site.paginate %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="pager"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="pagination"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- if paginator.previous_page %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" title="Go to Page {{ paginator.previous_page }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ paginator.previous_page }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- else %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;div class="pager-edge"&gt;•&lt;/div&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;div class="current-page"&gt;{{ paginator.page }}&lt;/div&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- if paginator.next_page %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="{{ paginator.next_page_path | relative_url }}" class="next-page" title="Go to Page {{ paginator.next_page }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ paginator.next_page }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- else %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;div class="pager-edge"&gt;•&lt;/div&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{%- endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{%- endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{%- endif -%}</span></p>
 <p class="p1"><span class="s1">&lt;/div&gt;</span></p>
 </body>
 </html>
