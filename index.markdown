@@ -2,7 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: novel_home
 ---
 
 <!-- 🔒 隐藏预览内容：每个标签取 chapter_number == 0 的那篇文章 -->
