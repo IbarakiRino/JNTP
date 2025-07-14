@@ -20,12 +20,12 @@ layout: home
 <!-- 📚 按标签分类展示文章，每个标签下的文章按 chapter_number 倒序排列 -->
 {% assign ordered_tags = site.tags | sort %}
 {% for tag in ordered_tags %}
-  <h2>{{ tag[0] }}</h2>
+  <h2 class="tag-header" data-tag="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
   <ul>
     {% assign posts_sorted = tag[1] | sort: 'chapter_number' | reverse %}
     {% for post in posts_sorted %}
       <li>
-        <a href="{{ post.url }}" class="preview-link" data-tag="{{ tag[0] | slugify }}">
+        <a href="{{ post.url }}">
           {{ post.title }}
         </a>
       </li>
@@ -62,8 +62,9 @@ layout: home
 document.addEventListener("DOMContentLoaded", function () {
   const previewBox = document.getElementById("preview-box");
 
-  document.querySelectorAll(".preview-link").forEach(link => {
-    link.addEventListener("mouseover", function (e) {
+  // 悬浮在标签名上时显示预览
+  document.querySelectorAll(".tag-header").forEach(header => {
+    header.addEventListener("mouseover", function (e) {
       const tagSlug = this.dataset.tag;
       const previewContent = document.getElementById("preview-" + tagSlug);
       if (previewContent) {
@@ -72,12 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    link.addEventListener("mousemove", function (e) {
+    header.addEventListener("mousemove", function (e) {
       previewBox.style.top = (e.pageY + 12) + "px";
       previewBox.style.left = (e.pageX + 12) + "px";
     });
 
-    link.addEventListener("mouseout", function () {
+    header.addEventListener("mouseout", function () {
       previewBox.style.display = "none";
     });
   });
